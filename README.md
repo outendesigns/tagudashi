@@ -9,13 +9,16 @@ Displaying HTML code on a webpage is surprisingly tricky—browsers try to rende
 `<link rel="stylesheet" type="text/css" href="https://outendesigns.github.io/tagudashi/tagudashi-styles.css">`
 ### 3. Create a `<pre>` tag with class "tagudashi"
 `<pre class="tagudashi"></pre>`
-### 4. Write or copy/paste the HTML code within the `<pre>` tag
-Read this part carefully, you'll need to modify the html code in order for it to render and format correctly within your webpage.<br>
-In order to prevent the browser from rendering the HTML code, you'll need to include a backtick "\`" immediately after every left angle bracket "<"
+### 4. Write or copy/paste the HTML inside the `<pre>` tag
+Normally, a browser will try to render any HTML inside a `<pre>` block. To prevent this, Tagudashi requires a simple change:
 <br><br>
-<\`pre class="tagudashi"><br>
+Add a backtick (\`) immediately after every < character in your HTML code.
+<br><br>
+This tells the browser to treat the tags as text instead of executing them. 
+<br><br>
+`<pre class="tagudashi"><br>`
 <\`h1>Tagudashi<\`/h1><br>
 <\`div class=example><br>
 <\`p>Note the use of the backtick after each left angle bracket<\`/p><br>
 <\`/div><br>
-<\`/pre><br>
+`</pre>`<br>
