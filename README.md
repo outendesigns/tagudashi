@@ -1,7 +1,7 @@
 # Tagudashi
 Easily display HTML code within a webpage!
 # Why Tagudashi?
-Displaying HTML code on a webpage is surprisingly tricky—browsers try to render the tags instead of showing them, forcing developers to manually escape characters or rely on bulky tools. Tagudashi solves this by automatically turning HTML into safe, readable code blocks, with optional syntax highlighting, so examples look clean without extra effort.
+Displaying HTML code on a webpage is surprisingly tricky—browsers try to render the tags instead of showing them, forcing developers to manually escape characters or rely on bulky tools. Tagudashi solves this by turning HTML into safe, readable code blocks, with syntax highlighting, so examples look clean with minimal effort.
 ## Example Usage:
 ### 1. Add the CDN to your page header
 `<script src="https://outendesigns.github.io/tagudashi/tagudashi.js"></script>`
@@ -15,7 +15,7 @@ Normally, a browser will try to render any HTML inside a `<pre>` block. To preve
 Add a backtick (\`) immediately after every < character in your HTML code. <\`
 <br><br>
 This tells the browser to treat the tags as text instead of executing them. 
-<br><br>
+<br><br><script src="https://outendesigns.github.io/tagudashi/tagudashi.js"></script>
 `<pre class="tagudashi">`<br>
 <\`h1>Tagudashi<\`/h1><br>
 <\`div class=example><br>
