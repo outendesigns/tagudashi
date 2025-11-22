@@ -10,12 +10,12 @@ Displaying HTML code on a webpage is surprisingly tricky—browsers try to rende
 ### 3. Create a `<pre>` tag with class "tagudashi"
 `<pre class="tagudashi"></pre>`
 ### 4. Write or copy/paste the HTML code within the `<pre>` tag
-Read this part carefully, you'll need to modify the html code in order for it to render and format correctly within your webpage.
+Read this part carefully, you'll need to modify the html code in order for it to render and format correctly within your webpage.<br>
 In order to prevent the browser from rendering the HTML code, you'll need to include a backtick "\`" immediately after every left angle bracket "<"
-
-<\`pre class="tagudashi">
-<\`h1>Tagudashi<\`/h1>
-<\`div class=example>
-<\`p>Note the use of the backtick after each left angle bracket<\`/p>
-<\`/div>
-<\`/pre>
+<br><br>
+<\`pre class="tagudashi"><br>
+<\`h1>Tagudashi<\`/h1><br>
+<\`div class=example><br>
+<\`p>Note the use of the backtick after each left angle bracket<\`/p><br>
+<\`/div><br>
+<\`/pre><br>
