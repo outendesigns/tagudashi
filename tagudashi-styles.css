@@ -6,6 +6,7 @@
 	overflow-wrap: anywhere;
 	word-break: break-word;
 	padding:25px;
+	border:1px solid white;
 }
 
 .angle{

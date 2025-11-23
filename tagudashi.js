@@ -28,45 +28,29 @@ document.addEventListener('DOMContentLoaded', () => {
 	const codeBlocks = document.querySelectorAll('.tagudashi');
 
 	codeBlocks.forEach(block => {
-		block.style.border = '1px solid #74737A';
-		block.style.borderRadius = '15px;'
 
 		// Get the raw text inside the <pre>
         let text = block.textContent;
-        console.log(text);
+        //console.log(text);
 
         // Replace ` with nothing
         text = text.replace(/`/g, '')
         
-
         // Replace < and > with their HTML entity equivalents
         text = text
         	.replace(/</g, '&lt;')
         	.replace(/>/g, '&gt;');
 
-/*
-        text = text
-        	.replace(/&lt;/g, '<span class="angle">&lt;</span>')
-        	.replace(/&gt;/g, '<span class="angle">&gt;</span>');
-
-        // Wrap tag names (handles opening and closing tags)
+        // Use one regex to wrap everything: tag names, attributes, and values
         text = text.replace(
-            /(?<=<span class="angle">&lt;<\/span>\/?)([a-zA-Z0-9]+)/g,
-            '<span class="tagname">$1</span>'
-        );
-*/
+            /&lt;(\/)?([a-zA-Z0-9]+)(.*?)&gt;/g,
+            (match, closingSlash, tagName, rest) => {
+                let result = `<span class="angle">&lt;</span>` +
+                (closingSlash ? `<span class="angle">/</span>` : '') +
+                `<span class="tagname">${tagName}</span>`;
 
-
-// Use one regex to wrap everything: tag names, attributes, and values
-        text = text.replace(
-            /&lt;\/?([a-zA-Z0-9]+)([^&]*)&gt;/g,
-            (match, tagName, rest) => {
-                // Highlight tag name
-                let result = `<span class="angle">&lt;</span><span class="tagname">${tagName}</span>`;
-
-                // Highlight attributes
                 rest = rest.replace(/\b([a-zA-Z-:]+)=("[^"]*")/g,
-                    '<span class="attrname">$1</span>=<span class="attrvalue">$2</span>'
+                '<span class="attrname">$1</span>=<span class="attrvalue">$2</span>'
                 );
 
                 result += rest + `<span class="angle">&gt;</span>`;
