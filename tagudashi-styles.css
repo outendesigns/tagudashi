@@ -1,8 +1,11 @@
-pre{
+.tagudashi {
 	font-size: 18px;
 	white-space: pre-wrap;
 	background: #272822;
 	color: #f8f8f2;
+	margin: 10px;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .angle{
